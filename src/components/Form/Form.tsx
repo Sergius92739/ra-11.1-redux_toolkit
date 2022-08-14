@@ -15,9 +15,6 @@ export default function Form(): JSX.Element {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (image === '') {
-      return;
-    }
     dispatch(saveImage(image));
     dispatch(resetForm());
   }
@@ -47,6 +44,7 @@ export default function Form(): JSX.Element {
           type="url"
           className="item__input"
           placeholder='Введите ссылку на изображение'
+          required
         />
         <button className="item__btn">Сохранить изображение</button>
       </form>
