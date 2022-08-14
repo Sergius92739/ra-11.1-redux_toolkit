@@ -15,6 +15,9 @@ export default function Form(): JSX.Element {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    if (image === '') {
+      return;
+    }
     dispatch(saveImage(image));
     dispatch(resetForm());
   }
